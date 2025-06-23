@@ -3,6 +3,8 @@
     - agreement re JclT and Sarthak ?
       - interviews & testing
         - co-ops for R&D too?
+          - mentiom Srihari
+            - ask about GitHub
     - Web responsible newbe ?
 - https://claude.ai/chat/0181dd85-da4f-4005-ac28-9fd7195a53de
   - likely needs to be a folder -
