@@ -6,6 +6,7 @@
           - mentiom Srihari
             - ask about GitHub
     - Web responsible newbe ?
+      - ownership is the recognized need - to relieve GsdT - DplT - ...
 - https://claude.ai/chat/0181dd85-da4f-4005-ac28-9fd7195a53de
   - likely needs to be a folder -
 - check Desktop for a vew object
