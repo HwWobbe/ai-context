@@ -9,6 +9,7 @@
       - ownership is the recognized need - to relieve GsdT - DplT - ...  
 - maint.:
   - Audio: aid ; headphones ; speakers
+    - aid: wiFi capable - ?? Robiallard /?
 - https://claude.ai/chat/0181dd85-da4f-4005-ac28-9fd7195a53de
   - likely needs to be a folder -
 - check Desktop for a vew object
