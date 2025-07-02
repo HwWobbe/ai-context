@@ -5,7 +5,7 @@
           - complete budgets and Funding requests
 - DplT .. -06-23
   - staffing plans - implications
-    - agreement re JclT and Sarthak ?
+    - agreement re JclT and S.= Sarthak ?
       - interviews & testing
         - co-ops for R&D too?
           - mentiom Srihari
