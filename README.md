@@ -14,7 +14,8 @@
       - ownership is the recognized need - to relieve GsdT - DplT - ...
         - acquired - confirm -07-07
     - Sr Test Owner - explained as reOrg for 3/3 2029 Goals - wip
-      - assess SwOt - train ?... for fill-in W...s - may shoe potentials
+      - assess SwOt - train ?... for fill-in W...s
+        - may show potentials
 - maint.:
   - Audio: aid ; headphones ; speakers
     - aid: wiFi capable - ?? Robiallard /?
