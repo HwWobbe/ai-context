@@ -11,7 +11,8 @@
           - mentiom Srihari
             - ask about GitHub
     - Web responsible newbe ?
-      - ownership is the recognized need - to relieve GsdT - DplT - ...  
+      - ownership is the recognized need - to relieve GsdT - DplT - ...
+        - acquired - confirm -07-07
 - maint.:
   - Audio: aid ; headphones ; speakers
     - aid: wiFi capable - ?? Robiallard /?
