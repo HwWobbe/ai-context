@@ -1,3 +1,6 @@
+- quickLinks & reminds:
+  - https://github.com/Data-Integrity-Group/Wip
+
 - DplT .. -07-07
   - ... 2/3 2029/Goals
     - subLayer of jcl + S. - for - time relief
