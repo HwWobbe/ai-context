@@ -4,7 +4,9 @@
         - co-op extensions via UoW references
           - complete budgets and Funding requests
     - ?? staffChat help re  : SrReOrg needs for 3/3 Goals /?
-  - ?? bottonUp for moreDev ?/ 
+  - ?? bottonUp for moreDev ?/
+    -  Co-Ops for Choice - SrEd training - then promotion
+    -  ...
 
 - DplT .. -06-23
   - staffing plans - implications
