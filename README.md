@@ -1,5 +1,6 @@
 - quickLinks & reminds:
   - https://github.com/Data-Integrity-Group/Wip
+  - consider a separate file for Dpl
 
 - DplT .. -07-07
   - ... 2/3 2029/Goals
