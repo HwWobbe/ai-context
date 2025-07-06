@@ -1,6 +1,9 @@
 - quickLinks & reminds:
   - https://github.com/Data-Integrity-Group/Wip
-  - evaluate 
+  - evaluate
+    - CoPilot in this context
+    - HpTwH in the iOS context
+      - will this work 
   - consider a separate file for Dpl
 
 - DplT .. -07-07
