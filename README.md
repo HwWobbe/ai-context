@@ -5,6 +5,7 @@
     - HpTwH in the iOS context
       - will this work?
         -  RemNote implications may be extensive due to its effective UI
+      -  Android impacts?
   - consider a separate file for Dpl
 
 - DplT .. -07-07
