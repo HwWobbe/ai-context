@@ -6,6 +6,7 @@
       - will this work?
         -  RemNote implications may be extensive due to its effective UI
       -  Android impacts?
+      -  reVisit the issue of a Git build of two files
   - consider a separate file for Dpl
 
 - DplT .. -07-07
