@@ -1,6 +1,6 @@
 - quickLinks & reminds:
   - https://github.com/Data-Integrity-Group/Wip
-  - ...
+  - evaluate 
   - consider a separate file for Dpl
 
 - DplT .. -07-07
