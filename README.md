@@ -3,7 +3,8 @@
   - evaluate
     - CoPilot in this context
     - HpTwH in the iOS context
-      - will this work 
+      - will this work?
+        -  RemNote implications may be extensive due to its effective UI
   - consider a separate file for Dpl
 
 - DplT .. -07-07
