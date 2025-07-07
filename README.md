@@ -17,6 +17,8 @@ https://chatgpt.com/c/6834697a-81a0-8000-9e84-5d55cd01c0f7
   - consider a separate file for Dpl
 
 - DplT .. -07-07
+  - srihari AWS > azure port
+    - ...
   - ... 2/3 2029/Goals
     - subLayer of jcl + S. - for - time relief
         - co-op extensions via UoW references
