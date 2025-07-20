@@ -1,9 +1,9 @@
 - quickLinks & reminds:
-  - 	* Text Blaze Dashboard
-  - 	* ?? is the leadingString the trigger? /?
-	* .tb Teacher YourAg YourAggressiveTeacher
-        * review gfh
-	* .do ?? inconsistently triggered /?
+  - Text Blaze Dashboard
+  - ?? is the leadingString the trigger? /?
+  - .tb Teacher YourAg YourAggressiveTeacher
+  -  review gfh
+  -  .do ?? inconsistently triggered /?
 
 https://chatgpt.com/c/6834697a-81a0-8000-9e84-5d55cd01c0f7
   - h / LzH  intro
