@@ -53,5 +53,6 @@ https://chatgpt.com/c/6834697a-81a0-8000-9e84-5d55cd01c0f7
 - https://github.com/pricing#compare-features -
   - ...
 - add a new folder for TtT - likely TquTt for _ -07- -08 -09- )
-- Add a new folder - likely TquTn for ( -10- -11- -12- )TquT4 
+- Add a new folder - likely TquTn for ( -10- -11- -12- )TquT4
+- Add TyeTn 2026-( -01 ... -12 )
 - .tb Teacher YourAg YourAggressiveTeacher
