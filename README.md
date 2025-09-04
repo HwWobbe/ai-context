@@ -17,6 +17,12 @@ https://chatgpt.com/c/6834697a-81a0-8000-9e84-5d55cd01c0f7
       -  reVisit the issue of a Git build of two files
   - consider a separate file for Dpl
 
+## 2025-09:
+...
+
+## 2025-08:
+...
+
 - DplT .. -07-07
   - srihari AWS > azure port
     - ...
