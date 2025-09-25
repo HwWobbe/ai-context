@@ -1,5 +1,7 @@
 - quickLinks & reminds:
   - Text Blaze Dashboard https://dashboard.blaze.today/
+    - Ask: testing e.r.: pinctuation triggers consistemcy
+      - ...
   - ?? is the leadingString the trigger? /?
   -  review gfh
   -  .do ?? inconsistently triggered /?
