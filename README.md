@@ -23,6 +23,12 @@ https://chatgpt.com/c/6834697a-81a0-8000-9e84-5d55cd01c0f7
 ## 2025-11:
 ...
 
+### 2025-11-03:
+
+- incorporate the external notes to provide comprehensive support for the DdDf2025 initiatives
+- ...
+
+
 ## 2025-09:
 ...
 
