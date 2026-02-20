@@ -24,12 +24,10 @@ https://chatgpt.com/c/6834697a-81a0-8000-9e84-5d55cd01c0f7
 ## 2026-02:
 ...
 
-### 2025-11-09:
-...
+### 2026-01-2?:
 
-### 2026-01-20:
+-20: added a private *.py + repo
 
-- added a private *.py + repo
 
 ## 2025-11:
 ...
