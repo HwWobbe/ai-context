@@ -21,6 +21,12 @@ https://chatgpt.com/c/6834697a-81a0-8000-9e84-5d55cd01c0f7
   - consider a separate file for Dpl
 
 
+## 2026-02:
+...
+
+### 2025-11-09:
+- added a private *.py + repo
+
 ## 2025-11:
 ...
 
