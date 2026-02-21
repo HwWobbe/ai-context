@@ -3,7 +3,6 @@
     - Ask: testing e.r.: punctuation triggers consistemcy
       - ...
   - ?? is the leadingString the trigger? /?
-  -  review gfh
   -  revise flickr access 
   -  .do ?? inconsistently triggered /?
 
