@@ -1,6 +1,6 @@
 - quickLinks & reminds:
   - Text Blaze Dashboard https://dashboard.blaze.today/
-    - Ask: testing e.r.: pinctuation triggers consistemcy
+    - Ask: testing e.r.: punctuation triggers consistemcy
       - ...
   - ?? is the leadingString the trigger? /?
   -  review gfh
