@@ -1,0 +1,127 @@
+{
+  "RnHw:cls:symbols:temporal": {
+    "year": "巳=Snake=2025 indexOrigin0:2020=Rat",
+    "month": "㋀-㋋ circledKatakana 1-12",
+    "week": "①-㊿ encircled 1-50",
+    "day": "㏠-㏾ parenthesized 1-31",
+    "weekday": "☿♀♁♂♃♄♅ planetary Mon-Sun",
+    "hour": "㍘-㍰ 24hr range 0-24",
+    "ampm": "㏂㏜ hybrid marker"
+  },
+  "RnHw:cls:symbols:rank": {
+    "numeric": "⑴-⒇ parenthesized 1-20",
+    "alpha": "⒜-⒵ parenthesized a-z",
+    "category": "𝕬-𝖅 blackboard bold uppercase",
+    "subtype": "𝖆-𝖟 blackboard bold lowercase"
+  },
+  "RnHw:cls:dimensions": {
+    "Q": "queue: ordinal position before/after",
+    "r": "rank: ⑴-⒇ numeric | ⒜-⒵ categorical",
+    "S": "space: 3x3m resolution PlusCodes",
+    "t": "time: compound temporal lattice"
+  },
+  "RnHw:cls:identity": {
+    "full": "Hans-Werner Wobbe",
+    "HwW": "progressiveTyping short form",
+    "HwWvW": "Twitter unique tag",
+    "H": "terminating personal significance marker",
+    "T260222": "timestamp YYMMDD = Feb 22 2026"
+  },
+  "RnHw:tools:textblaze": {
+    "status": "testing",
+    "desktop": "active",
+    "iOS": "outstanding - monitor for support",
+    "workaround": "iOS dictation for prose, manual for stamps",
+    "purpose": "progressive entry for non-touch-typists"
+  },
+  "RnHw:tools:remarkable": {
+    "status": "active",
+    "PDF": "preferred - adequate support",
+    "sketch": "active - collapse/expand pinch effective",
+    "role": "review/annotation/freeform/lattice sketching",
+    "sync": "PDF pipeline to TW/GitHub"
+  },
+  "RnHw:tools:tiddlywiki": {
+    "status": "active - primary laboratory",
+    "role": "canonical knowledge base",
+    "context": "🐟 file marker in stamps",
+    "level": "advanced power-user"
+  },
+  "RnHw:tools:json": {
+    "status": "active",
+    "role": "DataDict backend (Redis-free)",
+    "file": "RnHw_DataDict.json",
+    "version": "v0.2.3T260302"
+  },
+  "RnHw:cls:channels": {
+    "TW": "TiddlyWiki canonical source",
+    "GH": "GitHub version control",
+    "SS": "Substack public facing SubStackT0217",
+    "DG": "DebateGraph argumentation",
+    "JS": "JSON DataDict (local)",
+    "TB": "TextBlaze snippet entry",
+    "RM": "reMarkable PDF/sketch"
+  },
+  "RnHw:cls:versions": {
+    "v0.1": "SubStackT0217 first expansive draft",
+    "v0.2": "lane-based refactor",
+    "v0.2.1": "Redis-as-DataDict section",
+    "v0.2.2": "exec templates for jumpTo and batch ops",
+    "v0.2.3": "register_from_url — URL-first registration",
+    "v0.3": "community contributions"
+  },
+  "RnHw:𝒞:𝕮𝕷𝕾Main": {
+    "url": "https://claude.ai/chat/d0792d66-0af2-4c21-bc8a-58e3a6420130",
+    "title": "contextLatticeStamp main design session"
+  },
+  "RnHw:𝒞:𝕽𝕯一": {
+    "url": "https://claude.ai/chat/redis-comparison",
+    "title": "Redis vs alternatives"
+  },
+  "RnHw:𝒯:𝕽𝕯Design": {
+    "url": "http://localhost:8080/#RedisDesign",
+    "title": "Redis design patterns"
+  },
+  "RnHw:𝒦:𝕰𝖘Outline": {
+    "url": "https://keep.google.com/[placeholder-unfound]",
+    "title": "Essay outline draft"
+  },
+  "RnHw:𝒯:TagVocabulary": {
+    "url": "http://localhost:8080/#Design%3ATagVocabulary",
+    "title": "Design:TagVocabulary"
+  },
+  "RnHw:𝒯:noTopic一": {
+    "url": "http://localhost:8080/#SetAnchor",
+    "title": "SetAnchor"
+  },
+  "RnHw:exec:jump_tw": {
+    "cmd": "webbrowser.open(\"http://localhost:8080/#{tiddler}\")",
+    "params": [
+      "tiddler"
+    ],
+    "desc": "Jump to TiddlyWiki tiddler by name"
+  },
+  "RnHw:exec:jump_note": {
+    "cmd": "webbrowser.open(jump_note(\"{lane}\", \"{key}\"))",
+    "params": [
+      "lane",
+      "key"
+    ],
+    "desc": "Jump to any note via DataDict lookup"
+  },
+  "RnHw:exec:register_tw_batch": {
+    "code": "for t in tiddlers:\n    topic = t.get(\"topic\", \"noTopic\")\n    register_note(\"tw\", topic, t[\"url\"], t[\"title\"])",
+    "params": [
+      "tiddlers"
+    ],
+    "desc": "Batch register TiddlyWiki tiddlers"
+  },
+  "RnHw:𝒢:𝕰𝖘一": {
+    "url": "https://github.com/HwWobbe/AiContext",
+    "title": "HwWobbe/AiContext"
+  },
+  "RnHw:𝒞:WaysH260317": {
+    "url": "https://claude.ai/chat/8b9f1753-2042-4344-8792-fdad89f46c43",
+    "title": "WaysH session 2026-03-17"
+  }
+}
