@@ -5,32 +5,54 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>RightSidebar ToC Template</title>
 <style>
-body { font-family: system-ui, sans-serif; margin: 0; padding: 1rem; }
+:root {
+  --text-primary: #111;
+  --text-secondary: #555;
+  --text-tertiary: #888;
+  --border: #e5e5e5;
+  --bg: #fff;
+  --bg-input: #f8f8f8;
+  --border-input: #ddd;
+  --active-border: #555;
+}
+@media (prefers-color-scheme: dark) {
+  :root {
+    --text-primary: #e8e8e8;
+    --text-secondary: #aaa;
+    --text-tertiary: #777;
+    --border: #333;
+    --bg: #1a1a1a;
+    --bg-input: #2a2a2a;
+    --border-input: #444;
+    --active-border: #aaa;
+  }
+}
+body { font-family: system-ui, sans-serif; margin: 0; padding: 1rem; background: var(--bg); color: var(--text-primary); }
 .rsc-outer { height: 100vh; overflow-y: auto; display: flex; position: relative; }
 .rsc-content { flex: 1; padding: 0 1rem 2rem 0; min-width: 0; }
-.rsc-content h2 { font-size: 16px; font-weight: 500; margin: 2rem 0 0.5rem; padding-top: 0.75rem; border-top: 1px solid #e5e5e5; }
-.rsc-content h3 { font-size: 14px; font-weight: 500; color: #555; margin: 1.25rem 0 0.25rem; }
-.rsc-content h4 { font-size: 13px; font-weight: 500; color: #777; margin: 1rem 0 0.2rem; }
-.rsc-content h5 { font-size: 13px; font-weight: 400; color: #888; margin: 0.75rem 0 0.2rem; }
-.rsc-content h6 { font-size: 12px; font-weight: 400; color: #999; margin: 0.5rem 0 0.2rem; }
-.rsc-content p { font-size: 14px; color: #555; line-height: 1.7; margin: 0 0 0.75rem; }
-.rsc-sidebar { position: sticky; top: 0; width: 190px; flex-shrink: 0; align-self: flex-start; border-left: 1px solid #e5e5e5; padding: 0 0 1rem 1rem; }
+.rsc-content h2 { font-size: 16px; font-weight: 500; margin: 2rem 0 0.5rem; padding-top: 0.75rem; border-top: 1px solid var(--border); color: var(--text-primary); }
+.rsc-content h3 { font-size: 14px; font-weight: 500; color: var(--text-secondary); margin: 1.25rem 0 0.25rem; }
+.rsc-content h4 { font-size: 13px; font-weight: 500; color: var(--text-tertiary); margin: 1rem 0 0.2rem; }
+.rsc-content h5 { font-size: 13px; font-weight: 400; color: var(--text-tertiary); margin: 0.75rem 0 0.2rem; }
+.rsc-content h6 { font-size: 12px; font-weight: 400; color: var(--text-tertiary); margin: 0.5rem 0 0.2rem; }
+.rsc-content p { font-size: 14px; color: var(--text-secondary); line-height: 1.7; margin: 0 0 0.75rem; }
+.rsc-sidebar { position: sticky; top: 0; width: 190px; flex-shrink: 0; align-self: flex-start; border-left: 1px solid var(--border); padding: 0 0 1rem 1rem; }
 .rsc-header { display: flex; align-items: center; justify-content: space-between; margin-bottom: 0.75rem; }
-.rsc-sidebar-title { font-size: 11px; font-weight: 500; color: #999; text-transform: uppercase; letter-spacing: 0.05em; }
-.rsc-toggle-all { font-size: 10px; color: #999; background: none; border: none; cursor: pointer; padding: 0; }
-.rsc-toggle-all:hover { color: #333; }
+.rsc-sidebar-title { font-size: 11px; font-weight: 500; color: var(--text-tertiary); text-transform: uppercase; letter-spacing: 0.05em; }
+.rsc-toggle-all { font-size: 10px; color: var(--text-tertiary); background: none; border: none; cursor: pointer; padding: 0; }
+.rsc-toggle-all:hover { color: var(--text-primary); }
 .rsc-filter-wrap { position: relative; margin-bottom: 0.75rem; }
-.rsc-filter { width: 100%; font-size: 12px; padding: 4px 22px 4px 6px; border: 1px solid #ddd; border-radius: 6px; background: #f8f8f8; color: #333; box-sizing: border-box; }
-.rsc-filter::placeholder { color: #bbb; }
-.rsc-clear { position: absolute; right: 5px; top: 50%; transform: translateY(-50%); background: none; border: none; cursor: pointer; font-size: 14px; color: #bbb; padding: 0; line-height: 1; display: none; }
-.rsc-clear:hover { color: #333; }
-.toc-btn { display: flex; align-items: center; gap: 4px; width: 100%; background: none; border: none; cursor: pointer; text-align: left; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; border-left: 2px solid transparent; font-size: 12px; padding: 2px 0; }
-.toc-btn .chevron { font-size: 8px; flex-shrink: 0; transition: transform 0.15s; color: #bbb; }
+.rsc-filter { width: 100%; font-size: 12px; padding: 4px 22px 4px 6px; border: 1px solid var(--border-input); border-radius: 6px; background: var(--bg-input); color: var(--text-primary); box-sizing: border-box; }
+.rsc-filter::placeholder { color: var(--text-tertiary); }
+.rsc-clear { position: absolute; right: 5px; top: 50%; transform: translateY(-50%); background: none; border: none; cursor: pointer; font-size: 14px; color: var(--text-tertiary); padding: 0; line-height: 1; display: none; }
+.rsc-clear:hover { color: var(--text-primary); }
+.toc-btn { display: flex; align-items: center; gap: 4px; width: 100%; background: none; border: none; cursor: pointer; text-align: left; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; border-left: 2px solid transparent; font-size: 12px; padding: 2px 0; color: var(--text-secondary); }
+.toc-btn .chevron { font-size: 8px; flex-shrink: 0; transition: transform 0.15s; color: var(--text-tertiary); }
 .toc-btn.open .chevron { transform: rotate(90deg); }
 .toc-btn .label { overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
-.toc-btn:hover .label { color: #333; }
-.toc-btn.active { border-left-color: #555; }
-.toc-btn.active .label { color: #333; font-weight: 500; }
+.toc-btn:hover .label { color: var(--text-primary); }
+.toc-btn.active { border-left-color: var(--active-border); }
+.toc-btn.active .label { color: var(--text-primary); font-weight: 500; }
 .toc-btn.hidden { display: none; }
 .toc-children { overflow: hidden; max-height: 0; transition: max-height 0.2s ease; }
 .toc-children.open { max-height: 600px; }
@@ -112,7 +134,7 @@ function renderNode(node,parentEl){
   btn.className="toc-btn";
   btn.dataset.target=node.el.id;
   btn.style.paddingLeft=indent+"px";
-  btn.innerHTML=`<span class="chevron" style="opacity:${hasChildren?opacity:0}">${hasChildren?"▶":""}</span><span class="label" style="color:#777;opacity:${opacity}">${node.el.textContent}</span>`;
+  btn.innerHTML=`<span class="chevron" style="opacity:${hasChildren?opacity:0}">${hasChildren?"▶":""}</span><span class="label" style="opacity:${opacity}">${node.el.textContent}</span>`;
   const childrenEl=document.createElement("div");
   childrenEl.className="toc-children";
   btn.addEventListener("click",()=>{
