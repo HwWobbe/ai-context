@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>RightSidebar ToC Template</title>
+<style>
+body { font-family: system-ui, sans-serif; margin: 0; padding: 1rem; }
+.rsc-outer { height: 100vh; overflow-y: auto; display: flex; position: relative; }
+.rsc-content { flex: 1; padding: 0 1rem 2rem 0; min-width: 0; }
+.rsc-content h2 { font-size: 16px; font-weight: 500; margin: 2rem 0 0.5rem; padding-top: 0.75rem; border-top: 1px solid #e5e5e5; }
+.rsc-content h3 { font-size: 14px; font-weight: 500; color: #555; margin: 1.25rem 0 0.25rem; }
+.rsc-content h4 { font-size: 13px; font-weight: 500; color: #777; margin: 1rem 0 0.2rem; }
+.rsc-content h5 { font-size: 13px; font-weight: 400; color: #888; margin: 0.75rem 0 0.2rem; }
+.rsc-content h6 { font-size: 12px; font-weight: 400; color: #999; margin: 0.5rem 0 0.2rem; }
+.rsc-content p { font-size: 14px; color: #555; line-height: 1.7; margin: 0 0 0.75rem; }
+.rsc-sidebar { position: sticky; top: 0; width: 190px; flex-shrink: 0; align-self: flex-start; border-left: 1px solid #e5e5e5; padding: 0 0 1rem 1rem; }
+.rsc-header { display: flex; align-items: center; justify-content: space-between; margin-bottom: 0.75rem; }
+.rsc-sidebar-title { font-size: 11px; font-weight: 500; color: #999; text-transform: uppercase; letter-spacing: 0.05em; }
+.rsc-toggle-all { font-size: 10px; color: #999; background: none; border: none; cursor: pointer; padding: 0; }
+.rsc-toggle-all:hover { color: #333; }
+.rsc-filter-wrap { position: relative; margin-bottom: 0.75rem; }
+.rsc-filter { width: 100%; font-size: 12px; padding: 4px 22px 4px 6px; border: 1px solid #ddd; border-radius: 6px; background: #f8f8f8; color: #333; box-sizing: border-box; }
+.rsc-filter::placeholder { color: #bbb; }
+.rsc-clear { position: absolute; right: 5px; top: 50%; transform: translateY(-50%); background: none; border: none; cursor: pointer; font-size: 14px; color: #bbb; padding: 0; line-height: 1; display: none; }
+.rsc-clear:hover { color: #333; }
+.toc-btn { display: flex; align-items: center; gap: 4px; width: 100%; background: none; border: none; cursor: pointer; text-align: left; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; border-left: 2px solid transparent; font-size: 12px; padding: 2px 0; }
+.toc-btn .chevron { font-size: 8px; flex-shrink: 0; transition: transform 0.15s; color: #bbb; }
+.toc-btn.open .chevron { transform: rotate(90deg); }
+.toc-btn .label { overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.toc-btn:hover .label { color: #333; }
+.toc-btn.active { border-left-color: #555; }
+.toc-btn.active .label { color: #333; font-weight: 500; }
+.toc-btn.hidden { display: none; }
+.toc-children { overflow: hidden; max-height: 0; transition: max-height 0.2s ease; }
+.toc-children.open { max-height: 600px; }
+</style>
+</head>
+<body>
+<div class="rsc-outer" id="rsc-outer">
+  <main class="rsc-content" id="rsc-main">
+    <!-- REPLACE THIS CONTENT WITH YOUR OWN H2-H6 SECTIONS -->
+    <h2>Section one</h2>
+    <p>Content here.</p>
+    <h3>Sub-section</h3>
+    <p>Content here.</p>
+    <h4>Detail</h4>
+    <p>Content here.</p>
+    <h5>Deep detail</h5>
+    <p>Content here.</p>
+    <h2>Section two</h2>
+    <p>Content here.</p>
+    <h3>Sub-section</h3>
+    <p>Content here.</p>
+  </main>
+
+  <aside class="rsc-sidebar">
+    <div class="rsc-header">
+      <div class="rsc-sidebar-title">On this page</div>
+      <button class="rsc-toggle-all" id="rsc-toggle-all">⊞ all</button>
+    </div>
+    <div class="rsc-filter-wrap">
+      <input class="rsc-filter" id="rsc-filter" placeholder="filter or > jump" type="text"/>
+      <button class="rsc-clear" id="rsc-clear">✕</button>
+    </div>
+    <nav id="rsc-toc"></nav>
+  </aside>
+</div>
+
+<script>
+const outer=document.getElementById("rsc-outer");
+const main=document.getElementById("rsc-main");
+const toc=document.getElementById("rsc-toc");
+const filterInput=document.getElementById("rsc-filter");
+const clearBtn=document.getElementById("rsc-clear");
+const toggleAllBtn=document.getElementById("rsc-toggle-all");
+const headings=Array.from(main.querySelectorAll("h2,h3,h4,h5,h6"));
+const slugCount={};
+let allExpanded=false;
+
+function slugify(t){
+  let s=t.toLowerCase().trim().replace(/[^\w\s-]/g,"").replace(/\s+/g,"-");
+  slugCount[s]=(slugCount[s]||0)+1;
+  return slugCount[s]>1?s+"-"+slugCount[s]:s;
+}
+headings.forEach(el=>{if(!el.id)el.id=slugify(el.textContent);});
+
+const BASE_INDENT=8;
+const nodes=[];
+
+function buildTree(headings){
+  const root={children:[],level:1};
+  const stack=[root];
+  headings.forEach(el=>{
+    const level=parseInt(el.tagName[1]);
+    const node={el,level,children:[],btn:null,childrenEl:null,parent:null};
+    while(stack.length>1&&stack[stack.length-1].level>=level)stack.pop();
+    const parent=stack[stack.length-1];
+    node.parent=parent;
+    parent.children.push(node);
+    stack.push(node);
+    nodes.push(node);
+  });
+  return root;
+}
+
+function renderNode(node,parentEl){
+  const indent=(node.level-2)*BASE_INDENT+BASE_INDENT;
+  const opacity=Math.max(0.45,1-(node.level-2)*0.15);
+  const hasChildren=node.children.length>0;
+  const btn=document.createElement("button");
+  btn.className="toc-btn";
+  btn.dataset.target=node.el.id;
+  btn.style.paddingLeft=indent+"px";
+  btn.innerHTML=`<span class="chevron" style="opacity:${hasChildren?opacity:0}">${hasChildren?"▶":""}</span><span class="label" style="color:#777;opacity:${opacity}">${node.el.textContent}</span>`;
+  const childrenEl=document.createElement("div");
+  childrenEl.className="toc-children";
+  btn.addEventListener("click",()=>{
+    const opening=!btn.classList.contains("open");
+    if(node.parent&&node.parent.children){
+      node.parent.children.forEach(sib=>{
+        if(sib!==node&&sib.btn){
+          sib.btn.classList.remove("open");
+          if(sib.childrenEl)sib.childrenEl.classList.remove("open");
+        }
+      });
+    }
+    btn.classList.toggle("open",opening);
+    childrenEl.classList.toggle("open",opening);
+    outer.scrollTo({top:node.el.offsetTop-outer.offsetTop-20,behavior:"smooth"});
+  });
+  node.btn=btn; node.childrenEl=childrenEl;
+  parentEl.appendChild(btn);
+  parentEl.appendChild(childrenEl);
+  node.children.forEach(child=>renderNode(child,childrenEl));
+}
+
+const tree=buildTree(headings);
+tree.children.forEach(node=>renderNode(node,toc));
+
+function getAncestors(node){
+  const ancs=[];let cur=node.parent;
+  while(cur&&cur.el){ancs.push(cur);cur=cur.parent;}
+  return ancs;
+}
+
+function closeAll(){
+  nodes.forEach(n=>{
+    if(n.btn)n.btn.classList.remove("open","active");
+    if(n.childrenEl)n.childrenEl.classList.remove("open");
+  });
+}
+
+function setActive(id){
+  closeAll();
+  const node=nodes.find(n=>n.el.id===id);
+  if(!node||!node.btn)return;
+  node.btn.classList.add("active");
+  getAncestors(node).reverse().forEach(anc=>{
+    if(anc.btn)anc.btn.classList.add("open");
+    if(anc.childrenEl)anc.childrenEl.classList.add("open");
+  });
+  if(node.children.length>0){
+    node.btn.classList.add("open");
+    node.childrenEl.classList.add("open");
+  }
+}
+
+function updateActive(){
+  const st=outer.scrollTop;
+  let cur=headings[0];
+  headings.forEach(h=>{if(h.offsetTop-outer.offsetTop<=st+outer.clientHeight*0.35)cur=h;});
+  setActive(cur.id);
+}
+
+outer.addEventListener("scroll",updateActive);
+updateActive();
+
+toggleAllBtn.addEventListener("click",()=>{
+  allExpanded=!allExpanded;
+  nodes.forEach(n=>{
+    if(n.btn)n.btn.classList.toggle("open",allExpanded);
+    if(n.childrenEl)n.childrenEl.classList.toggle("open",allExpanded);
+  });
+  toggleAllBtn.textContent=allExpanded?"⊟ all":"⊞ all";
+});
+
+function normalize(t){return t.toLowerCase();}
+
+function applyFilter(){
+  const raw=filterInput.value.trim();
+  clearBtn.style.display=raw?"block":"none";
+  const isCmd=raw.startsWith(">");
+  const terms=raw.replace(/^>/,"").toLowerCase().split(/\s+/).filter(Boolean);
+  if(!terms.length){nodes.forEach(n=>{if(n.btn)n.btn.classList.remove("hidden");});updateActive();return;}
+  if(isCmd){
+    const match=nodes.find(n=>n.btn&&terms.some(t=>normalize(n.el.textContent).includes(t)));
+    if(match){
+      outer.scrollTo({top:match.el.offsetTop-outer.offsetTop-20,behavior:"smooth"});
+      setActive(match.el.id);
+    }
+  } else {
+    nodes.forEach(n=>{if(n.btn)n.btn.classList.toggle("hidden",!terms.some(t=>normalize(n.el.textContent).includes(t)));});
+  }
+}
+
+filterInput.addEventListener("input",applyFilter);
+clearBtn.addEventListener("click",()=>{
+  filterInput.value="";
+  clearBtn.style.display="none";
+  nodes.forEach(n=>{if(n.btn)n.btn.classList.remove("hidden");});
+  updateActive();
+  filterInput.focus();
+});
+</script>
+</body>
+</html>
