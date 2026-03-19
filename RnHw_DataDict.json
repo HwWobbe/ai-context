@@ -123,5 +123,12 @@
   "RnHw:𝒞:WaysH260317": {
     "url": "https://claude.ai/chat/8b9f1753-2042-4344-8792-fdad89f46c43",
     "title": "WaysH session 2026-03-17"
+  },
+  "RnHw:cls:identity:ᢳH": {
+    "symbol": "ᢳ",
+    "unicode": "Canadian Syllabics Way (Moose Cree subblock, Unified Canadian Aboriginal Syllabics Extended)",
+    "meaning": "ᢳH = personal language substring: Way + H(ans)",
+    "stackRole": "toBeDefined",
+    "ref": "SredDfT2025"
   }
 }
