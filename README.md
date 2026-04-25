@@ -45,6 +45,8 @@ See [`ContextLatticeStamp/Docs/FolderStructureGuide.md`](ContextLatticeStamp/Doc
 | `RnHw_*.json` | Personal vocabulary & private data dictionaries — local only |
 | Session logs | Transient; not versioned |
 
+- 2026-04-25: Jdate macro V0.0.1
+- 
 ---
 
 ## Status
