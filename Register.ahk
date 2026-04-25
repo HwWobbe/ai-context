@@ -1,5 +1,6 @@
 #Requires AutoHotkey v2.0
 #SingleInstance Force
+#v1.0.0 (host mode may need local syncs)
 
 ; ── RnHw: Win+R — Register current browser URL ─────────────────────────────
 ; HwWvWT260302
