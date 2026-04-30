@@ -1,7 +1,10 @@
 # AiContext
 
 > A personal toolkit for working smarter with AI — structured context, dense stamps, and portable session state.
->> currently just a preliminary assessment ( ideally: based on a wiki Foundation and possible AiH augmented. ) 
+>> currently just a preliminary assessment 
+>> ideally: 
+>>> based on a wiki Foundation and possible AiH augmented.
+>>> exploiting unicodeSymbols and nonWord stringPatterns
 
 ---
 
