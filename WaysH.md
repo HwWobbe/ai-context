@@ -42,7 +42,7 @@ One line per environment. If you need to read more — it's too long.
 |---|---|
 | ℱ VS Code | `code <filename>` in command prompt |
 | 𝒮 PowerShell | `start <filename>` |
-| ℱ Explorer | Navigate → double-click |
+| ℱ Explorer ( ^f )| Navigate → double-click |
 
 ---
 
