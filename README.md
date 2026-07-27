@@ -6,6 +6,7 @@
 >>> based on a wiki Foundation,
 >>> AiH augmented,
 >>> exploiting unicodeSymbols and nonWord stringPatterns. triggered via TwH( GitCalTwe ).
+
 .
 > refined '0 QuickLinks`
 
